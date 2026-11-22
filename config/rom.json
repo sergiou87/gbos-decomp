@@ -1,0 +1,1551 @@
+{
+  "size": 32768,
+  "sha256": "a4f92e994d86add9cc075aec73055aaa5419bea1233f6026dee299b305e466ae",
+  "compiler_flags": [
+    "-msm83",
+    "--std-c11",
+    "--sdcccall",
+    "0",
+    "--opt-code-size",
+    "--no-std-crt0",
+    "--nostdlib"
+  ],
+  "regions": [
+    {
+      "name": "reset_vector",
+      "start": "0x0000",
+      "end": "0x0003",
+      "kind": "asm",
+      "source": "src/asm/entry.s"
+    },
+    {
+      "name": "reset_fill",
+      "start": "0x0003",
+      "end": "0x0008",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_08",
+      "start": "0x0008",
+      "end": "0x0009",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_08_fill",
+      "start": "0x0009",
+      "end": "0x0010",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_10",
+      "start": "0x0010",
+      "end": "0x0011",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_10_fill",
+      "start": "0x0011",
+      "end": "0x0018",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_18",
+      "start": "0x0018",
+      "end": "0x0019",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_18_fill",
+      "start": "0x0019",
+      "end": "0x0020",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_20",
+      "start": "0x0020",
+      "end": "0x0021",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_20_fill",
+      "start": "0x0021",
+      "end": "0x0028",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_28",
+      "start": "0x0028",
+      "end": "0x0029",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_28_fill",
+      "start": "0x0029",
+      "end": "0x0030",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_30",
+      "start": "0x0030",
+      "end": "0x0031",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_30_fill",
+      "start": "0x0031",
+      "end": "0x0038",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "restart_38",
+      "start": "0x0038",
+      "end": "0x0039",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "restart_38_fill",
+      "start": "0x0039",
+      "end": "0x0066",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "return_from_interrupt_0066",
+      "start": "0x0066",
+      "end": "0x0067",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "vector_tail_fill",
+      "start": "0x0067",
+      "end": "0x0100",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "cartridge_entry",
+      "start": "0x0100",
+      "end": "0x0103",
+      "kind": "asm",
+      "source": "src/asm/entry.s"
+    },
+    {
+      "name": "cartridge_header",
+      "start": "0x0103",
+      "end": "0x0150",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/cartridge_metadata.s"
+    },
+    {
+      "name": "header_tail_fill",
+      "start": "0x0150",
+      "end": "0x0200",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "cartridge_initial_state",
+      "start": "0x0200",
+      "end": "0x0216",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/cartridge_metadata.s"
+    },
+    {
+      "name": "cartridge_api",
+      "start": "0x0216",
+      "end": "0x0270",
+      "kind": "asm",
+      "source": "src/asm/api.s"
+    },
+    {
+      "name": "api_tail_fill",
+      "start": "0x0270",
+      "end": "0x0280",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "boot_start",
+      "start": "0x0280",
+      "end": "0x0307",
+      "kind": "asm",
+      "source": "src/asm/startup.s"
+    },
+    {
+      "name": "command_monitor",
+      "start": "0x0307",
+      "end": "0x03a0",
+      "kind": "asm",
+      "source": "src/asm/monitor.s"
+    },
+    {
+      "name": "spi_initialize_and_exchange",
+      "start": "0x03a0",
+      "end": "0x03c7",
+      "kind": "asm",
+      "source": "src/asm/spi.s"
+    },
+    {
+      "name": "spi_send",
+      "start": "0x03c7",
+      "end": "0x03ce",
+      "kind": "c",
+      "source": "src/c/spi_send.c",
+      "area": "C_03C7"
+    },
+    {
+      "name": "spi_control",
+      "start": "0x03ce",
+      "end": "0x0417",
+      "kind": "asm",
+      "source": "src/asm/spi.s"
+    },
+    {
+      "name": "sd_read",
+      "start": "0x0417",
+      "end": "0x04cc",
+      "kind": "asm",
+      "source": "src/asm/sd_read.s"
+    },
+    {
+      "name": "fifo",
+      "start": "0x04cc",
+      "end": "0x0515",
+      "kind": "asm",
+      "source": "src/asm/spi.s"
+    },
+    {
+      "name": "cartridge_flash_and_window",
+      "start": "0x0515",
+      "end": "0x062b",
+      "kind": "asm",
+      "source": "src/asm/cartridge.s"
+    },
+    {
+      "name": "sd_write",
+      "start": "0x062b",
+      "end": "0x0699",
+      "kind": "asm",
+      "source": "src/asm/sd_write.s"
+    },
+    {
+      "name": "cartridge_copy_and_boot",
+      "start": "0x0699",
+      "end": "0x07f7",
+      "kind": "asm",
+      "source": "src/asm/cartridge.s"
+    },
+    {
+      "name": "cartridge_code_tail_fill",
+      "start": "0x07f7",
+      "end": "0x0800",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "os_header",
+      "start": "0x0800",
+      "end": "0x0819",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/os_header.c",
+      "area": "OS_HEADER"
+    },
+    {
+      "name": "font_fill_byte",
+      "start": "0x0819",
+      "end": "0x081a",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/video.s"
+    },
+    {
+      "name": "video_and_joypad",
+      "start": "0x081a",
+      "end": "0x08e5",
+      "kind": "asm",
+      "source": "src/asm/video.s"
+    },
+    {
+      "name": "main_entry",
+      "start": "0x08e5",
+      "end": "0x091a",
+      "kind": "c",
+      "source": "src/c/main.c",
+      "area": "C_08E5",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "return_stubs_091a",
+      "start": "0x091a",
+      "end": "0x091d",
+      "kind": "asm",
+      "source": "src/asm/return_stubs.s"
+    },
+    {
+      "name": "sd_command_crc7",
+      "start": "0x091d",
+      "end": "0x0975",
+      "kind": "c",
+      "source": "src/c/sd_crc7.c",
+      "area": "C_091D",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sd_command",
+      "start": "0x0975",
+      "end": "0x0b0f",
+      "kind": "c",
+      "source": "src/c/sd_command.c",
+      "area": "C_0975",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "context": {
+        "bundle": "disk",
+        "source": "disk.c",
+        "function": "diskCmd",
+        "replacement": "sd_command",
+        "headers": [
+          "bios.h",
+          "disk.h",
+          "error.h",
+          "fat.h",
+          "os.h",
+          "str.h",
+          "sys.h",
+          "types.h"
+        ],
+        "compiler_flags": [
+          "--xram-loc",
+          "0xc000",
+          "-D",
+          "CART_GBX"
+        ],
+        "unit_sha256": "6e1a4e329f9db65ec2002c5a8add8e2c63d384763e3ec8b6a8561b0aa269ca0b",
+        "identifiers": {
+          "sd_command": "diskCmd",
+          "command_crc7": "diskCrc7",
+          "sd_select": "bi_ss_on",
+          "sd_deselect": "bi_ss_off",
+          "sd_exchange": "bi_spi",
+          "command": "cmd",
+          "argument": "arg",
+          "timeout": "i",
+          "response": "resp",
+          "packet": "buff"
+        },
+        "bindings": {
+          "_diskCrc7": "0x091d",
+          "_bi_ss_on": "0x0222",
+          "_bi_ss_off": "0x0225",
+          "_bi_spi": "0x021f"
+        }
+      },
+      "symbol_phase_standins": 63
+    },
+    {
+      "name": "sd_command_fast",
+      "start": "0x0b0f",
+      "end": "0x0bd2",
+      "kind": "c",
+      "source": "src/c/sd_command_fast.c",
+      "area": "C_0B0F",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sd_initialize",
+      "start": "0x0bd2",
+      "end": "0x0e22",
+      "kind": "c",
+      "source": "src/c/sd_initialize.c",
+      "area": "C_0BD2",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sd_read_control",
+      "start": "0x0e22",
+      "end": "0x0fdd",
+      "kind": "c",
+      "source": "src/c/sd_read_control.c",
+      "area": "C_0E22",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sd_control",
+      "start": "0x0fdd",
+      "end": "0x10e1",
+      "kind": "c",
+      "source": "src/c/sd_control.c",
+      "area": "C_0FDD",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_initialize",
+      "start": "0x10e1",
+      "end": "0x1310",
+      "kind": "c",
+      "source": "src/c/fat_initialize.c",
+      "area": "C_10E1",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_lfn_offsets",
+      "start": "0x1310",
+      "end": "0x131d",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/fat_lfn_offsets.c",
+      "area": "C_1310",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_sector_cache",
+      "start": "0x131d",
+      "end": "0x1408",
+      "kind": "c",
+      "source": "src/c/fat_sector_cache.c",
+      "area": "C_131D",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_boot_helpers",
+      "start": "0x1408",
+      "end": "0x146e",
+      "kind": "c",
+      "source": "src/c/fat_boot_helpers.c",
+      "area": "C_1408",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_scan_directory",
+      "start": "0x146e",
+      "end": "0x1726",
+      "kind": "c",
+      "source": "src/c/fat_scan_directory.c",
+      "area": "C_146E",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 14633
+    },
+    {
+      "name": "fat_cluster_math",
+      "start": "0x1726",
+      "end": "0x184d",
+      "kind": "c",
+      "source": "src/c/fat_cluster_math.c",
+      "area": "C_1726",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_read_entry",
+      "start": "0x184d",
+      "end": "0x18b8",
+      "kind": "c",
+      "source": "src/c/fat_read_entry.c",
+      "area": "C_184D",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_next_cluster",
+      "start": "0x18b8",
+      "end": "0x18e3",
+      "kind": "c",
+      "source": "src/c/fat_next_cluster.c",
+      "area": "C_18B8",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_load_metadata",
+      "start": "0x18e3",
+      "end": "0x1cc1",
+      "kind": "c",
+      "source": "src/c/fat_load_metadata.c",
+      "area": "C_18E3",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 9184
+    },
+    {
+      "name": "fat_file_state",
+      "start": "0x1cc1",
+      "end": "0x1f87",
+      "kind": "c",
+      "source": "src/c/fat_file_state.c",
+      "area": "C_1CC1",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_file_read",
+      "start": "0x1f87",
+      "end": "0x218b",
+      "kind": "c",
+      "source": "src/c/fat_file_read.c",
+      "area": "C_1F87",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "path_helpers",
+      "start": "0x218b",
+      "end": "0x2246",
+      "kind": "c",
+      "source": "src/c/paths.c",
+      "area": "C_218B",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_open_path",
+      "start": "0x2246",
+      "end": "0x22f8",
+      "kind": "c",
+      "source": "src/c/fat_open_path.c",
+      "area": "C_2246",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_find_path",
+      "start": "0x22f8",
+      "end": "0x250b",
+      "kind": "c",
+      "source": "src/c/fat_find_path.c",
+      "area": "C_22F8",
+      "compiler": "r8604",
+      "optimization": "default",
+      "context": {
+        "bundle": "fat",
+        "source": "fat_context.c",
+        "function": "fat_find_path",
+        "replacement": "fat_find_path",
+        "headers": [
+          "fat_context.h"
+        ],
+        "compiler_flags": [
+          "--xram-loc",
+          "0xc000",
+          "-D",
+          "CART_GBX"
+        ],
+        "unit_sha256": "0d3712f601f2e97be88a34fe00b2a6a38b4cd0f2488d5e1fb04f17482af4ec50",
+        "identifiers": {
+          "error": "resp"
+        },
+        "bindings": {
+          "_fat_scan_directory": "0x146e",
+          "_fat_load_metadata": "0x18e3",
+          "_fat_directory_count": "0xc033",
+          "_fat_work_buffer": "0xc03a",
+          "_bytes_equal": "0x722f"
+        }
+      }
+    },
+    {
+      "name": "read_dword",
+      "start": "0x250b",
+      "end": "0x253c",
+      "kind": "c",
+      "source": "src/c/read_dword.c",
+      "area": "C_250B",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "write_dword",
+      "start": "0x253c",
+      "end": "0x2553",
+      "kind": "c",
+      "source": "src/c/write_dword.c",
+      "area": "C_253C",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_find_free_run",
+      "start": "0x2553",
+      "end": "0x2736",
+      "kind": "c",
+      "source": "src/c/fat_find_free_run.c",
+      "area": "C_2553",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_writeback",
+      "start": "0x2736",
+      "end": "0x27f2",
+      "kind": "c",
+      "source": "src/c/fat_writeback.c",
+      "area": "C_2736",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_link_run",
+      "start": "0x27f2",
+      "end": "0x2904",
+      "kind": "c",
+      "source": "src/c/fat_link_run.c",
+      "area": "C_27F2",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_extend_file",
+      "start": "0x2904",
+      "end": "0x2b31",
+      "kind": "c",
+      "source": "src/c/fat_extend_file.c",
+      "area": "C_2904",
+      "compiler": "3.3.0-linux-x86",
+      "compiler_runtime": "glibc213",
+      "optimization": "default",
+      "compiler_flags": [
+        "--nogcse"
+      ]
+    },
+    {
+      "name": "fat_chain_tail",
+      "start": "0x2b31",
+      "end": "0x2bfa",
+      "kind": "c",
+      "source": "src/c/fat_chain_tail.c",
+      "area": "C_2B31",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_write_file",
+      "start": "0x2bfa",
+      "end": "0x2dce",
+      "kind": "c",
+      "source": "src/c/fat_file_write.c",
+      "area": "C_2BFA",
+      "compiler": "3.3.0-linux-x86",
+      "compiler_runtime": "glibc213",
+      "optimization": "default",
+      "compiler_flags": [
+        "--noinvariant"
+      ]
+    },
+    {
+      "name": "fat_allocate_chain",
+      "start": "0x2dce",
+      "end": "0x2e54",
+      "kind": "c",
+      "source": "src/c/fat_allocate_chain.c",
+      "area": "C_2DCE",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_zero_clusters",
+      "start": "0x2e54",
+      "end": "0x2f11",
+      "kind": "c",
+      "source": "src/c/fat_zero_clusters.c",
+      "area": "C_2E54",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "768"
+      ]
+    },
+    {
+      "name": "fat_write_short_entry",
+      "start": "0x2f11",
+      "end": "0x3095",
+      "kind": "c",
+      "source": "src/c/fat_short_entry.c",
+      "area": "C_2F11",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_write_lfn_entry",
+      "start": "0x3095",
+      "end": "0x3192",
+      "kind": "c",
+      "source": "src/c/fat_lfn_entry.c",
+      "area": "C_3095",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_advance_directory",
+      "start": "0x3192",
+      "end": "0x3369",
+      "kind": "c",
+      "source": "src/c/fat_directory_advance.c",
+      "area": "C_3192",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--debug",
+        "--max-allocs-per-node",
+        "5000"
+      ]
+    },
+    {
+      "name": "fat_make_short_name",
+      "start": "0x3369",
+      "end": "0x3528",
+      "kind": "c",
+      "source": "src/c/fat_short_name.c",
+      "area": "C_3369",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_create_path_entry",
+      "start": "0x3528",
+      "end": "0x389b",
+      "kind": "c",
+      "source": "src/c/fat_create_path_entry.c",
+      "area": "C_3528",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 4459
+    },
+    {
+      "name": "fat_make_directory",
+      "start": "0x389b",
+      "end": "0x3a14",
+      "kind": "c",
+      "source": "src/c/fat_make_directory.c",
+      "area": "C_389B",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "fat_directory_blank_name",
+      "start": "0x3a14",
+      "end": "0x3a20",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/fat_directory_blank_name.c",
+      "area": "C_3A14",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "load_cheats",
+      "start": "0x3a20",
+      "end": "0x3e2b",
+      "kind": "c",
+      "source": "src/c/cheat_loader.c",
+      "area": "C_3A20",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_menu_text",
+      "start": "0x3e2b",
+      "end": "0x3e7e",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/cheat_menu_text.c",
+      "area": "C_3E2B",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_code_valid",
+      "start": "0x3e7e",
+      "end": "0x3ed1",
+      "kind": "c",
+      "source": "src/c/cheat_code_valid.c",
+      "area": "C_3E7E",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_edit_code",
+      "start": "0x3ed1",
+      "end": "0x4043",
+      "kind": "c",
+      "source": "src/c/cheat_editor.c",
+      "area": "C_3ED1",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_hex_digit",
+      "start": "0x4043",
+      "end": "0x4084",
+      "kind": "c",
+      "source": "src/c/cheat_hex.c",
+      "area": "C_4043",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_code_address",
+      "start": "0x4084",
+      "end": "0x4131",
+      "kind": "c",
+      "source": "src/c/cheat_code_address.c",
+      "area": "C_4084",
+      "compiler": "r8604",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "256"
+      ]
+    },
+    {
+      "name": "cheat_apply_codes",
+      "start": "0x4131",
+      "end": "0x4357",
+      "kind": "c",
+      "source": "src/c/cheat_apply.c",
+      "area": "C_4131",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "13860"
+      ]
+    },
+    {
+      "name": "cheat_banks",
+      "start": "0x4357",
+      "end": "0x441a",
+      "kind": "c",
+      "source": "src/c/cheat_banks.c",
+      "area": "C_4357",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "cheat_patch_codes",
+      "start": "0x441a",
+      "end": "0x4687",
+      "kind": "c",
+      "source": "src/c/cheat_patch_codes.c",
+      "area": "C_441A",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 3457
+    },
+    {
+      "name": "prepare_os_reload",
+      "start": "0x4687",
+      "end": "0x476d",
+      "kind": "c",
+      "source": "src/c/prepare_os_reload.c",
+      "area": "C_4687",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "os_authentication_challenge",
+      "start": "0x476d",
+      "end": "0x4811",
+      "kind": "c",
+      "source": "src/c/os_authentication_challenge.c",
+      "area": "C_476D",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "os_update_authentication",
+      "start": "0x4811",
+      "end": "0x48ad",
+      "kind": "c",
+      "source": "src/c/os_update_authentication.c",
+      "area": "C_4811",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--nolabelopt"
+      ]
+    },
+    {
+      "name": "input_key_event",
+      "start": "0x48ad",
+      "end": "0x48fe",
+      "kind": "c",
+      "source": "src/c/input_event.c",
+      "area": "C_48AD",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "os_store_byte",
+      "start": "0x48fe",
+      "end": "0x490a",
+      "kind": "c",
+      "source": "src/c/os_byte.c",
+      "area": "C_48FE",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "os_initialize_and_reload",
+      "start": "0x490a",
+      "end": "0x4a78",
+      "kind": "c",
+      "source": "src/c/os_initialize.c",
+      "area": "C_490A",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "heap",
+      "start": "0x4a78",
+      "end": "0x4ae1",
+      "kind": "c",
+      "source": "src/c/heap.c",
+      "area": "C_4A78",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "file_open_menu",
+      "start": "0x4ae1",
+      "end": "0x4c0f",
+      "kind": "c",
+      "source": "src/c/file_open_menu.c",
+      "area": "C_4AE1",
+      "compiler": "3.3.0-linux-x86",
+      "compiler_runtime": "glibc213",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "12665"
+      ],
+      "subregions": [
+        {
+          "name": "file_open_menu_text",
+          "start": "0x4be2",
+          "end": "0x4c0f",
+          "category": "data"
+        }
+      ]
+    },
+    {
+      "name": "file_text_menu",
+      "start": "0x4c0f",
+      "end": "0x4ccf",
+      "kind": "c",
+      "source": "src/c/file_text_menu.c",
+      "area": "C_4C0F",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "os_menu_date_and_monitor",
+      "start": "0x4ccf",
+      "end": "0x4dfe",
+      "kind": "c",
+      "source": "src/c/os_utilities.c",
+      "area": "C_4CCF",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "browser_exit",
+      "start": "0x4dfe",
+      "end": "0x4e01",
+      "kind": "c",
+      "source": "src/c/browser_exit.c",
+      "area": "C_4DFE",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "game_load_menu",
+      "start": "0x4e01",
+      "end": "0x4eb5",
+      "kind": "c",
+      "source": "src/c/game_menu.c",
+      "area": "C_4E01",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "program_game",
+      "start": "0x4eb5",
+      "end": "0x5267",
+      "kind": "c",
+      "source": "src/c/program_game.c",
+      "area": "C_4EB5",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 353
+    },
+    {
+      "name": "program_game_text",
+      "start": "0x5267",
+      "end": "0x529f",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/program_game_text.c",
+      "area": "C_5267",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "recover_initialization",
+      "start": "0x529f",
+      "end": "0x532d",
+      "kind": "c",
+      "source": "src/c/recover_initialization.c",
+      "area": "C_529F",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "settings_menu",
+      "start": "0x532d",
+      "end": "0x57a4",
+      "kind": "c",
+      "source": "src/c/settings_menu.c",
+      "area": "C_532D",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "compiler_flags": [
+        "-DCART_GBX"
+      ],
+      "symbol_phase_standins": 1083,
+      "subregions": [
+        {
+          "name": "settings_menu_text",
+          "start": "0x570c",
+          "end": "0x57a4",
+          "category": "data"
+        }
+      ]
+    },
+    {
+      "name": "information_dialogs",
+      "start": "0x57a4",
+      "end": "0x5af1",
+      "kind": "c",
+      "source": "src/c/information_dialogs.c",
+      "area": "C_57A4",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "settings_and_save_bank_clear",
+      "start": "0x5af1",
+      "end": "0x5c64",
+      "kind": "c",
+      "source": "src/c/settings.c",
+      "area": "C_5AF1",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "save_handlers",
+      "start": "0x5c64",
+      "end": "0x5ef6",
+      "kind": "c",
+      "source": "src/c/save_handlers.c",
+      "area": "C_5C64",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sram_transfers",
+      "start": "0x5ef6",
+      "end": "0x60d8",
+      "kind": "c",
+      "source": "src/c/sram_transfer.c",
+      "area": "C_5EF6",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "file_sram_menu",
+      "start": "0x60d8",
+      "end": "0x61ad",
+      "kind": "c",
+      "source": "src/c/file_sram_menu.c",
+      "area": "C_60D8",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_positioning",
+      "start": "0x61ad",
+      "end": "0x620c",
+      "kind": "c",
+      "source": "src/c/display_positioning.c",
+      "area": "C_61AD",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_decimal",
+      "start": "0x620c",
+      "end": "0x629c",
+      "kind": "c",
+      "source": "src/c/display_decimal.c",
+      "area": "C_620C",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_formatting",
+      "start": "0x629c",
+      "end": "0x638e",
+      "kind": "c",
+      "source": "src/c/display_formatting.c",
+      "area": "C_629C",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_size",
+      "start": "0x638e",
+      "end": "0x6446",
+      "kind": "c",
+      "source": "src/c/display_size.c",
+      "area": "C_638E",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_blink",
+      "start": "0x6446",
+      "end": "0x6490",
+      "kind": "c",
+      "source": "src/c/display_blink.c",
+      "area": "C_6446",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_initialize",
+      "start": "0x6490",
+      "end": "0x653f",
+      "kind": "c",
+      "source": "src/c/display_initialize.c",
+      "area": "C_6490",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_text_and_cursor",
+      "start": "0x653f",
+      "end": "0x667c",
+      "kind": "c",
+      "source": "src/c/display_text.c",
+      "area": "C_653F",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "show_error",
+      "start": "0x667c",
+      "end": "0x66af",
+      "kind": "c",
+      "source": "src/c/show_error.c",
+      "area": "C_667C",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "browser_render",
+      "start": "0x66af",
+      "end": "0x6957",
+      "kind": "c",
+      "source": "src/c/browser_render.c",
+      "area": "C_66AF",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "browser_text",
+      "start": "0x6957",
+      "end": "0x6976",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/browser_text.c",
+      "area": "C_6957"
+    },
+    {
+      "name": "menu_select",
+      "start": "0x6976",
+      "end": "0x6b8c",
+      "kind": "c",
+      "source": "src/c/menu_select.c",
+      "area": "C_6976",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "1780"
+      ]
+    },
+    {
+      "name": "display_frame",
+      "start": "0x6b8c",
+      "end": "0x6bf1",
+      "kind": "c",
+      "source": "src/c/display_frame.c",
+      "area": "C_6B8C",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_geometry",
+      "start": "0x6bf1",
+      "end": "0x6c12",
+      "kind": "c",
+      "source": "src/c/display_geometry.c",
+      "area": "C_6BF1",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "display_write_n",
+      "start": "0x6c12",
+      "end": "0x6c76",
+      "kind": "c",
+      "source": "src/c/display_write_n.c",
+      "area": "C_6C12",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--noinduction"
+      ]
+    },
+    {
+      "name": "input_polling",
+      "start": "0x6c76",
+      "end": "0x6d10",
+      "kind": "c",
+      "source": "src/c/input.c",
+      "area": "C_6C76",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "memory_fill",
+      "start": "0x6d10",
+      "end": "0x6d40",
+      "kind": "c",
+      "source": "src/c/memory_fill.c",
+      "area": "C_6D10",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "memory_copy",
+      "start": "0x6d40",
+      "end": "0x6d81",
+      "kind": "c",
+      "source": "src/c/memory_copy.c",
+      "area": "C_6D40",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--max-allocs-per-node",
+        "192"
+      ]
+    },
+    {
+      "name": "clear_browser_screen",
+      "start": "0x6d81",
+      "end": "0x6d8d",
+      "kind": "c",
+      "source": "src/c/browser_clear.c",
+      "area": "C_6D81",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "file_browser",
+      "start": "0x6d8d",
+      "end": "0x722f",
+      "kind": "c",
+      "source": "src/c/file_browser.c",
+      "context": {
+        "bundle": "browser",
+        "source": "browser.c",
+        "function": "browser",
+        "replacement": "file_browser",
+        "headers": [
+          "fat.h",
+          "os.h",
+          "sys.h",
+          "types.h"
+        ],
+        "compiler_flags": [
+          "--xram-loc",
+          "0xc000",
+          "-D",
+          "CART_GBX"
+        ],
+        "unit_sha256": "7f0fee5e16812ce513862d6528db96d0a6f081ba93308bcb4b0d036b5c61d20e",
+        "identifiers": {
+          "file_browser": "browser",
+          "selected": "selector",
+          "first": "page",
+          "offset": "sub_sel",
+          "redraw": "full_repaint",
+          "cluster": "current_dir",
+          "depth": "sel_stack_ptr",
+          "error": "resp",
+          "input_keys": "joy",
+          "fat_directory_count": "fat_dir_size",
+          "fat_work_buffer": "fat_dir",
+          "fat_parent_cluster": "fat_sub_dir_clust",
+          "browser_file": "br_rec",
+          "browser_history": "sel_stack",
+          "display_page_rows": "guiGetMaxRows",
+          "fat_scan_directory": "fat_load_dir",
+          "browser_render": "guiDrawBrowser",
+          "wait_keypress": "sysJoyWait",
+          "fat_load_metadata": "fat_get_full_record",
+          "file_open_menu": "osFileMenu",
+          "browser_exit": "osExitBrowser",
+          "main_menu": "osMainMenu",
+          "recover_initialization": "osStartGame"
+        },
+        "members": {
+          "is_directory": "is_dir",
+          "cluster": "data_clsut"
+        },
+        "bindings": {
+          "_guiGetMaxRows": "0x6bf1",
+          "_fat_load_dir": "0x146e",
+          "_guiDrawBrowser": "0x66af",
+          "_sysJoyWait": "0x6c76",
+          "_fat_get_full_record": "0x18e3",
+          "_osFileMenu": "0x4ae1",
+          "_osExitBrowser": "0x4dfe",
+          "_osMainMenu": "0x4ccf",
+          "_osStartGame": "0x529f",
+          "_joy": "0xd85d",
+          "_fat_dir_size": "0xc033",
+          "_fat_dir": "0xc03a",
+          "_fat_sub_dir_clust": "0xc02f",
+          "_br_rec": "0xd9ce",
+          "_sel_stack": "0xdab3"
+        }
+      },
+      "area": "C_6D8D",
+      "compiler": "3.3.0-win32-xpheap",
+      "optimization": "default",
+      "symbol_phase_standins": 1353
+    },
+    {
+      "name": "bytes_equal",
+      "start": "0x722f",
+      "end": "0x7271",
+      "kind": "c",
+      "source": "src/c/bytes_equal.c",
+      "area": "C_722F",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default"
+    },
+    {
+      "name": "string_length",
+      "start": "0x7271",
+      "end": "0x728b",
+      "kind": "c",
+      "source": "src/c/string_length.c",
+      "area": "C_7271",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "string_helpers",
+      "start": "0x728b",
+      "end": "0x739f",
+      "kind": "c",
+      "source": "src/c/string_helpers.c",
+      "area": "C_728B",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "string_append",
+      "start": "0x739f",
+      "end": "0x744c",
+      "kind": "c",
+      "source": "src/c/string_append.c",
+      "area": "C_739F",
+      "compiler": "r8604",
+      "optimization": "default"
+    },
+    {
+      "name": "sdcc_division",
+      "start": "0x744c",
+      "end": "0x758b",
+      "kind": "asm",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/gbz80/div.s",
+      "source_sha256": "3c16f177530f6105752ea34580733ef241c40f5356029c3f79f6bb83daae372d",
+      "area": "CODE"
+    },
+    {
+      "name": "sdcc_multiplication",
+      "start": "0x758b",
+      "end": "0x75e8",
+      "kind": "asm",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/gbz80/mul.s",
+      "source_sha256": "e363d6c728b36bf9b2306cbce106ec8f1dee3635181b827635cab1e6967a6ea7"
+    },
+    {
+      "name": "sdcc_abi_stubs",
+      "start": "0x75e8",
+      "end": "0x765d",
+      "kind": "asm",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/gbz80/stubs.s",
+      "source_sha256": "1863e02e57ed9acf735d195900bb85d2a5560a808581c8cf3ea9c1889bafbe69"
+    },
+    {
+      "name": "sdcc_mullong",
+      "start": "0x765d",
+      "end": "0x791b",
+      "kind": "c",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/_mullong.c",
+      "source_sha256": "d13c789d4ac15798b34e05302ba17b4826830762a4b248c3723cf1d1ff3f45b9",
+      "area": "C_765D",
+      "compiler": "r8604",
+      "optimization": "default",
+      "compiler_flags": [
+        "--std-sdcc99",
+        "-I.tools/sdcc-r8604-src/device/include"
+      ]
+    },
+    {
+      "name": "sdcc_modslong",
+      "start": "0x791b",
+      "end": "0x7a3c",
+      "kind": "c",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/_modslong.c",
+      "source_sha256": "1d038b752a56b300ad648998225432e73df197a3f2a281e2b328a536680e1640",
+      "area": "C_791B",
+      "compiler": "r8604",
+      "optimization": "default",
+      "compiler_flags": [
+        "--std-sdcc99",
+        "-I.tools/sdcc-r8604-src/device/include"
+      ]
+    },
+    {
+      "name": "sdcc_modulong",
+      "start": "0x7a3c",
+      "end": "0x7ae8",
+      "kind": "c",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/_modulong.c",
+      "source_sha256": "4ac824e1b0fa54326a4eb4f9e815cab13ff3ec59700f24e8d1e931991495bc1e",
+      "area": "C_7A3C",
+      "compiler": "r8604",
+      "optimization": "default",
+      "compiler_flags": [
+        "--std-sdcc99",
+        "-I.tools/sdcc-r8604-src/device/include"
+      ]
+    },
+    {
+      "name": "sdcc_divslong",
+      "start": "0x7ae8",
+      "end": "0x7c11",
+      "kind": "c",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/_divslong.c",
+      "source_sha256": "908229b5ea95d1683de4e8023511c8ad86ee275e63c3b92afb6789ce9d13aaaa",
+      "area": "C_7AE8",
+      "compiler": "3.3.0-linux-x86",
+      "optimization": "default",
+      "compiler_flags": [
+        "--nolabelopt",
+        "--std-sdcc99",
+        "-I.tools/sdcc-r8604-src/device/include",
+        "--max-allocs-per-node",
+        "20"
+      ]
+    },
+    {
+      "name": "sdcc_divulong",
+      "start": "0x7c11",
+      "end": "0x7ca1",
+      "kind": "c",
+      "category": "runtime",
+      "source": ".tools/sdcc-r8604-src/device/lib/_divulong.c",
+      "source_sha256": "adae35095b57b4564b1042fb895b19aebd7d14ef34bf32f1e065ad656d2dc8bd",
+      "area": "C_7C11",
+      "compiler": "r8604",
+      "optimization": "default",
+      "compiler_flags": [
+        "--std-sdcc99",
+        "-I.tools/sdcc-r8604-src/device/include"
+      ]
+    },
+    {
+      "name": "runtime_tail_fill",
+      "start": "0x7ca1",
+      "end": "0x7d00",
+      "kind": "asm",
+      "category": "data",
+      "source": "src/asm/erased_fill.s"
+    },
+    {
+      "name": "font",
+      "start": "0x7d00",
+      "end": "0x8000",
+      "kind": "c",
+      "category": "data",
+      "source": "src/c/font.c",
+      "area": "C_7D00"
+    }
+  ],
+  "output": "GBOS.GB"
+}

@@ -1,0 +1,58 @@
+name: Build byte-exact ROM
+
+on:
+  push:
+    tags-ignore:
+      - 'v*'
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 180
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Run tooling unit tests
+        run: make test
+
+      - name: Install host tools and start Docker
+        shell: bash
+        run: |
+          set -euo pipefail
+          brew install flex bison colima docker docker-buildx qemu lima-additional-guestagents
+          mkdir -p "$HOME/.docker/cli-plugins"
+          ln -sfn "$(brew --prefix docker-buildx)/bin/docker-buildx" \
+            "$HOME/.docker/cli-plugins/docker-buildx"
+          docker buildx version
+          echo "$(brew --prefix flex)/bin" >> "$GITHUB_PATH"
+          echo "$(brew --prefix bison)/bin" >> "$GITHUB_PATH"
+          echo "SDKROOT=$(xcrun --sdk macosx --show-sdk-path)" >> "$GITHUB_ENV"
+          colima start --vm-type qemu --arch x86_64 --cpu 2 --memory 4 --disk 20
+          docker info
+
+      - name: Set up pinned toolchains
+        run: make setup
+
+      - name: Build and verify complete ROM
+        run: make verify
+
+      - name: Upload verified ROM
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: gbos-rom
+          path: build/GBOS.GB
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Stop Docker VM
+        if: always()
+        run: colima stop

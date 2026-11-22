@@ -1,0 +1,39 @@
+{
+  "fat": {
+    "directory": "tools/context",
+    "repository": "https://github.com/smspower/sms-everdrive-os",
+    "commit": "b513cc86128cbfb79020a293195fc3b2fe4c61b5",
+    "files": {
+      "fat_context.c": "d223993dda7c388a588f924ea01c13ea8fa2a07e981d53d8a09a996cb40cf4fc",
+      "fat_context.h": "dbdee6b84d29d241232da1b5e6fe0a13b7af872bd2fc2a507bfe4a544ac11db5"
+    }
+  },
+  "disk": {
+    "directory": "tools/context/disk",
+    "repository": "https://github.com/smspower/sms-everdrive-os",
+    "commit": "b513cc86128cbfb79020a293195fc3b2fe4c61b5",
+    "files": {
+      "bios.h": "e5a4279da6437e81b811a6bac3e9e19fbc55a5ad003210e46f5d7e19d21dc082",
+      "disk.c": "d7fda310e172cd308133bc8e91eb439b842935f5d8c2506db3ca12b92c1ebe12",
+      "disk.h": "508cda7fd2db224bb1181952c5728f64801574d31ea300c7193bea755a550b41",
+      "error.h": "4f5a2a6e318a00e7cb4730d463d04d90b6f47897f31796a60af8868b3645535d",
+      "fat.h": "45023757de438ebbcd74ce355354d35e1ec09cbf26786971f03a772693ba0153",
+      "os.h": "bb30d04e55b3c2cbb0b6f408c40520174cdf8152388715e20deeada335d5132e",
+      "str.h": "4cb7de2e61e3e0d6405f116d831ef0d6938535adc2262222c75a02672d4183f8",
+      "sys.h": "d3e3af41e585324d7887fd085b9b1a23007201c7028440f42891f311efd6507f",
+      "types.h": "5dac4fe91c68b746cd3f83d596f13785dbc7e43e21f80dd8eba1d946c5611dd6"
+    }
+  },
+  "browser": {
+    "directory": "tools/context/browser",
+    "repository": "https://github.com/smspower/sms-everdrive-os",
+    "commit": "b513cc86128cbfb79020a293195fc3b2fe4c61b5",
+    "files": {
+      "browser.c": "3004087df9fa463422e95611751425dee2177b0986cbca8fd7b9a1c214093779",
+      "fat.h": "45023757de438ebbcd74ce355354d35e1ec09cbf26786971f03a772693ba0153",
+      "os.h": "bb30d04e55b3c2cbb0b6f408c40520174cdf8152388715e20deeada335d5132e",
+      "sys.h": "d3e3af41e585324d7887fd085b9b1a23007201c7028440f42891f311efd6507f",
+      "types.h": "5dac4fe91c68b746cd3f83d596f13785dbc7e43e21f80dd8eba1d946c5611dd6"
+    }
+  }
+}

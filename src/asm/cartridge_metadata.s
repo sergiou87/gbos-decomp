@@ -1,0 +1,73 @@
+.module cartridge_metadata
+
+.globl _os_boot_mode
+.globl _bios_version
+.globl _fat_date
+.globl _fat_time
+.globl _input_header_marker
+
+.area CARTRIDGE_METADATA (ABS)
+.org 0x0103
+    .db 0xff
+boot_logo:
+    .db 0xce, 0xed, 0x66, 0x66, 0xcc, 0x0d, 0x00, 0x0b
+    .db 0x03, 0x73, 0x00, 0x83, 0x00, 0x0c, 0x00, 0x0d
+    .db 0x00, 0x08, 0x11, 0x1f, 0x88, 0x89, 0x00, 0x0e
+    .db 0xdc, 0xcc, 0x6e, 0xe6, 0xdd, 0xdd, 0xd9, 0x99
+    .db 0xbb, 0xbb, 0x67, 0x63, 0x6e, 0x0e, 0xec, 0xcc
+    .db 0xdd, 0xdc, 0x99, 0x9f, 0xbb, 0xb9, 0x33, 0x3e
+cartridge_title:
+    .ascii "GBOS"
+    .db 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff
+manufacturer_field:
+    .ascii "KRKZ"
+cgb_flag:
+    .db 0x80
+new_licensee_field:
+    .db 0xff, 0xff
+sgb_flag:
+    .db 0x03
+cartridge_type:
+    .db 0x00
+rom_size_code:
+    .db 0x00
+ram_size_code:
+    .db 0x00
+destination_code:
+    .db 0x01
+old_licensee_code:
+    .db 0x33
+mask_rom_version:
+    .db 0x00
+header_checksum:
+    .db 0xcc
+; Preserve the stored checksum even though it does not match the image sum.
+global_checksum:
+    .db 0xff, 0xff
+
+.org 0x0200
+boot_marker_initial:
+    .db 0x00
+_os_boot_mode:
+    .db 0x00
+_bios_version:
+    .db 0x01
+sd_card_type_initial:
+    .db 0xff
+_fat_date:
+    .dw 0x0002
+_fat_time:
+    .dw 0x0001
+_input_header_marker:
+    .dw 0xffff
+; No meaning has been established for these eight initial-state bytes.
+state_reserved:
+    .db 0, 0, 0, 0, 0, 0, 0, 0
+boot_register_a_initial:
+    .db 0
+spi_config_initial:
+    .db 0
+copy_bank_other_initial:
+    .db 0
+copy_bank_low_initial:
+    .db 0

@@ -1,0 +1,64 @@
+name: Release byte-exact ROM
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  version:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require numeric major.minor version
+        env:
+          TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+$ ]] || {
+            echo "Invalid release tag: expected v<major>.<minor>" >&2
+            exit 1
+          }
+
+  build:
+    needs: version
+    uses: ./.github/workflows/build.yml
+
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Download verified ROM
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: gbos-rom
+          path: release
+
+      - name: Recheck artifact size and SHA-256
+        run: python3 tools/rom.py release/GBOS.GB
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" release/GBOS.GB \
+            --verify-tag --title "$TAG" \
+            --notes "Byte-for-byte matching GB PRO+ OS V4 ROM. SHA-256: a4f92e994d86add9cc075aec73055aaa5419bea1233f6026dee299b305e466ae"

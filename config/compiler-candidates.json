@@ -1,0 +1,94 @@
+{
+  "description": "Checksum-pinned production compiler profiles.",
+  "binary_releases": [
+    {
+      "id": "3.3.0-linux-x86",
+      "url": "https://downloads.sourceforge.net/project/sdcc/sdcc-linux-x86/3.3.0/sdcc-3.3.0-i386-unknown-linux2.5.tar.bz2",
+      "sha256": "585b7279698b92e69e6170a23d2f1dd08e5f8b46dc42c36886f23106d94b31bb",
+      "compiler_sha256": "2e43da50b4ebccd07a6e877c97bd3d0890c44afb33dc003770c2980b4ab85ed1",
+      "preprocessor_sha256": "d04002b282ae3b6f509bc05c14f784baedde52dc0757ab95fcd4ed9bc076442c",
+      "runtime_image": "debian@sha256:f37a335e82bca302e955fa39f9dfe28f1be618f016f8a2b56318e5a5111afc26",
+      "runtime_platform": "linux/amd64",
+      "runtime_packages": {
+        "gcc-12-base": "12.2.0-14+deb12u1",
+        "lib32gcc-s1": "12.2.0-14+deb12u1",
+        "lib32stdc++6": "12.2.0-14+deb12u1",
+        "libc6": "2.36-9+deb12u14",
+        "libc6-i386": "2.36-9+deb12u14"
+      },
+      "runtime_environment": {
+        "GLIBC_TUNABLES": "glibc.malloc.tcache_count=0",
+        "LC_ALL": "C"
+      },
+      "runtime_variants": {
+        "glibc213": {
+          "status": "The same unmodified compiler with this private period libc reproduces all 557 FAT file-extension bytes with --nogcse and all 468 FAT file-write bytes with --noinvariant, both at the default allocation bound. The writer takes a wrapping 16-bit buffer address. This does not establish the original compiler host.",
+          "archive": {
+            "filename": "libc6-i386_2.13-38_amd64.deb",
+            "url": "https://snapshot.debian.org/file/1003cdf503cfefdb199c6362fdaee7e33339a17f",
+            "sha256": "0b0ccfa0966b884efc3a23b8f1650683fab31b2e7f8cf8b0acfdac68e008a53c",
+            "metadata_url": "https://snapshot.debian.org/archive/debian/20130505T000000Z/dists/wheezy/main/binary-amd64/Packages.gz",
+            "source_url": "https://snapshot.debian.org/package/eglibc/2.13-38/"
+          },
+          "environment": {
+            "LD_LIBRARY_PATH": "/opt/gbos-glibc213/lib32"
+          }
+        }
+      }
+    },
+    {
+      "id": "3.3.0-win32",
+      "url": "https://downloads.sourceforge.net/project/sdcc/sdcc-win32/3.3.0/sdcc-3.3.0-setup.exe",
+      "sha256": "5db8a2058abc25f1eefb70be23a6a5860e9e54057e2889b2b8c06ee58c09adaf",
+      "compiler_sha256": "6530ea5946aac5e74cc8fb8b2b77039a5a91395c386fe4de21f397ccf5946311",
+      "preprocessor_sha256": "6886beb2f881d79942c08e9d68d41f57c0f581b59bcb6f06209f186f91e741c0",
+      "runtime_image": "debian@sha256:f37a335e82bca302e955fa39f9dfe28f1be618f016f8a2b56318e5a5111afc26",
+      "runtime_packages": {
+        "wine": "8.0~repack-4",
+        "wine32:i386": "8.0~repack-4",
+        "libwine:i386": "8.0~repack-4",
+        "libc6:i386": "2.36-9+deb12u14",
+        "libstdc++6:i386": "12.2.0-14+deb12u1",
+        "p7zip-full": "16.02+really26.02+dfsg-0+deb12u1",
+        "gcc-mingw-w64-i686-win32": "12.2.0-14+deb12u1+25.2+b1",
+        "binutils-mingw-w64-i686": "2.40-2+10.4",
+        "mingw-w64-i686-dev": "10.0.0-3"
+      },
+      "COMSPEC": "C:\\windows\\system32\\cmd.exe",
+      "runtime_platform": "linux/amd64",
+      "xpheap": {
+        "profile_id": "3.3.0-win32-xpheap",
+        "description": "The original win32 compiler under Wine, with msvcrt's CRT heap served by the Windows XP heap model (tools/xpheap). Compiles run with a fixed container layout and environment so that msvcrt's startup allocations are identical in every build.",
+        "base": "0x20000000",
+        "segments": 6,
+        "container_environment": {
+          "PATH": "/usr/bin:/bin",
+          "HOME": "/tmp",
+          "LC_ALL": "C",
+          "WINEARCH": "win32",
+          "WINEDEBUG": "-all",
+          "WINEPREFIX": "/work/prefix"
+        },
+        "unit_directory": "/work/unit",
+        "compiler_directory": "/opt/sdcc"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "r8604",
+      "release": "SDCC 3.3.0 release, SVN r8604 (2013-05-10)",
+      "revision": "7c688b8c4a104f158b5ef226c0ab6bac125acdb4",
+      "url": "https://api.github.com/repos/svn2github/sdcc/tarball/7c688b8c4a104f158b5ef226c0ab6bac125acdb4",
+      "sha256": "fb279e0e72b0a596181fe44fdfb5ab17edf861d4e6b92c02b0612c0bc4d9c88c",
+      "compiler": "SDCC 3.3.0, SVN r8604",
+      "build_dependencies": {
+        "boost": {
+          "version": "1.55.0",
+          "url": "https://archives.boost.io/release/1.55.0/source/boost_1_55_0.tar.bz2",
+          "sha256": "fff00023dd79486d444c8e29922f4072e1d451fc5a4d2b6075852ead7f2b7b52"
+        }
+      }
+    }
+  ]
+}
